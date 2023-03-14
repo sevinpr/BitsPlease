@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import logo from './logo.svg';
 // import { Button, TextField } from "@material-ui/core";
 
 const api = axios.create({
@@ -12,7 +13,7 @@ const MyComponent = () => {
 
   const handleSubmit = async () => {
     try {
-      if (inputText != "") {
+      if (inputText !== "") {
         const response = await api.post("/api/input", { text: inputText });
         setResponseText(response.data[0]);
       }
@@ -23,7 +24,7 @@ const MyComponent = () => {
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
-    if (event.target.value == "") {
+    if (event.target.value === "") {
       document.body.style.backgroundColor = "white";
       setResponseText(null);
     }
@@ -42,29 +43,31 @@ const MyComponent = () => {
   return (
     <div>
       <div className="d-inline-flex align-items-center">
-        <img id="logo" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" />
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+        <img id="logo" src={logo}  alt={logo}/>
         <h2>BitsPlease</h2>
       </div>
-      <h2 className="d-flex justify-content-center">
+      <h2 className="d-flex justify-content-center"
+        id="HeaderText">
         Let's Prevent Spreading Hate Speech
       </h2>
-      <div class="d-flex justify-content-center">
-        <div class="form-floating w-25 input-group rounded">
+      <div className="d-flex justify-content-center">
+        <div className="form-floating w-25 input-group rounded">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="floatingInput"
-            placeholder="Enter Comment...."
+            placeholder="Enter Text...."
             onChange={handleInputChange}
           />
-          <label for="floatingInput">Comment...</label>
-          <button type="button" class="btn btn-primary" onClick={handleSubmit}>
+          <label form="floatingInput" >Type Here...</label>
+          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
             <i className="fa fa-search"></i>
           </button>
         </div>
       </div>
       {responseText ? (
-        <p id="marginAdder" class="d-flex justify-content-center">
+        <p id="marginAdder" className="d-flex justify-content-center">
           {responseText}
         </p>
       ) : null}
