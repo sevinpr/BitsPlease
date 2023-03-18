@@ -1,6 +1,12 @@
 pipeline {
     agent any
-    
+
+    stage('Install Node.js and npm') {
+        steps {
+            sh 'brew update'
+            sh 'brew install node'
+        }
+    }
     stages {
         stage('Build') {
             steps {
