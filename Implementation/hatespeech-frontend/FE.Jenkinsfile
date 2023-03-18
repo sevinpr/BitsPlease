@@ -13,14 +13,12 @@ pipeline {
             steps {
                 // Checkout the repository
                 checkout scm
-                withNodeJS("nodejs-14.17.5"){
                 // Install dependencies
                 sh 'npm  install'
                 
                 // Build the project
                 sh 'npm run build'
             }
-        }
       }
     }
 }
