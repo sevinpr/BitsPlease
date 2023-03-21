@@ -2,16 +2,21 @@ pipeline {
     agent any
     
     stages {
-       stage('Build') {
+        stage('Checkout') {
             steps {
                 // Checkout the repository
                 checkout scm
+            }
+        }
+        
+        stage('Build') {
+            steps {
                 // Install dependencies
-                sh 'npm  install'
+                sh 'npm install'
                 
                 // Build the project
                 sh 'npm run build'
             }
-      }
+        }
     }
 }
