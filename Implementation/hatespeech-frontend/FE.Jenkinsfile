@@ -34,18 +34,9 @@ pipeline {
                 sh "sudo cp -r Implementation/hatespeech-frontend/build/* ${APP_DIR}/"
 
                 // Create the Nginx server block configuration file
-                sh "sudo sh -c 'cat > ${NGINX_CONFIG_FILE} <<EOF\n\
-                server {\n\
-                    listen 80;\n\
-                    listen [::]:80;\n\
-                    server_name localhost;\n\
-                    root ${APP_DIR};\n\
-                    index index.html;\n\
-                    location / {\n\
-                        try_files \$uri \$uri/ /index.html;\n\
-                    }\n\
-                }\n\
-                EOF'"
+                withCredentials([string(credentialsId: 'nginx-config', variable: 'NGINX_CONFIG')]) {
+                    writeFile file: NGINX_CONFIG_FILE, text: "${env.NGINX_CONFIG}\n"
+                }
 
                 // Enable the new configuration file
                 sh "sudo ln -s ${NGINX_CONFIG_FILE} /etc/nginx/sites-enabled/"
