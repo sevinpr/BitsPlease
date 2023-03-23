@@ -11,11 +11,14 @@ pipeline {
         
         stage('Build') {
             steps {
-                // Install dependencies
-                sh 'npm install'
-                
-                // Build the project
-                sh 'npm run build'
+                // Change to the correct directory
+                dir('Implementation/hatespeech-frontend') {
+                    // Install dependencies
+                    sh 'npm install'
+
+                    // Build the project
+                    sh 'npm run build'
+                }
             }
         }
     }
