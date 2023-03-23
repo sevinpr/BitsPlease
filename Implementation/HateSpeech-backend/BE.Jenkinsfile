@@ -3,19 +3,26 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               checkout scm
+                checkout scm
             }
         }
+
         stage('Build') {
             steps {
-                sh 'python setup.py build'
+                // Change to the correct directory
+                dir('Implementation/HateSpeech-backend') {
+                    // Install dependencies
+                    sh 'python setup.py build'
+                }
             }
         }
+
         stage('Test') {
             steps {
                 sh 'python setup.py test'
             }
         }
+
         stage('Deploy') {
             steps {
                 sh 'python setup.py install'
