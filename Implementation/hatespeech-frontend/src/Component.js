@@ -49,7 +49,7 @@ const MyComponent = () => {
       </div>
       <h2 className="d-flex justify-content-center"
         id="HeaderText">
-        Let's Prevent Spreading Hate Speechv1
+        Let's Prevent Spreading Hate Speechv2
       </h2>
       <div className="d-flex justify-content-center">
         <div className="form-floating w-25 input-group rounded">
