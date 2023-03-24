@@ -21,10 +21,10 @@ pipeline {
             }
         }
 
-        stage('Start service') {
+        stage('Deploy') {
             steps {
-                sh 'sudo systemctl stop hatespeech-frontend || true'
-                sh 'sudo systemctl start hatespeech-frontend'
+                sh 'docker build -t front-end-app .'
+                sh 'docker run -d -p 3000:3000 front-end-app'
             }
         }
     }
