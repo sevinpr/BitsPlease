@@ -7,7 +7,7 @@ pipeline {
                 checkout scm
             }
         }
-        
+
         stage('Build') {
             steps {
                 // Change to the correct directory
@@ -23,8 +23,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'docker build -t front-end-app .'
-                sh 'docker run -d -p 3000:3000 front-end-app'
+                // Change to the correct directory
+                dir('Implementation/hatespeech-frontend') {
+                    sh 'docker build -t front-end-app .'
+                    sh 'docker run -d -p 3000:3000 front-end-app'
+                }
             }
         }
     }
