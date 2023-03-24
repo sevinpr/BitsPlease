@@ -1,18 +1,12 @@
-
 import pickle
 import pandas as pd
 import numpy as np
-from flask import Flask, request, send_from_directory
+from flask import Flask
+from flask import request
 from flask_cors import cross_origin
 from sklearn.feature_extraction.text import TfidfVectorizer
-import os
 
-app = Flask(__name__, static_folder='frontend/build', static_url_path='')
-
-
-@app.route('/')
-def index():
-    return send_from_directory(app.static_folder, 'index.html')
+app = Flask(__name__)
 
 
 @app.route('/api/input', methods=["POST"])
@@ -39,5 +33,5 @@ def post_input():
     return final_prediction.tolist()
 
 
-if _name_ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ.get('BACKEND_PORT', 5000))
+if __name__ == '__main__':
+    app.run()
