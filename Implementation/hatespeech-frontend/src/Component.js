@@ -4,7 +4,7 @@ import logo from './logo.svg';
 // import { Button, TextField } from "@material-ui/core";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:5000/", // replace with your base URL
+  baseURL: "http://backend-app:5000/", // replace with your base URL
 });
 
 const MyComponent = () => {
