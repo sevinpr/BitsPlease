@@ -1,5 +1,6 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
             steps {
@@ -12,20 +13,30 @@ pipeline {
                 // Change to the correct directory
                 dir('Implementation/HateSpeech-backend') {
                     // Install dependencies
-                    sh 'python setup.py build'
+                    sh 'pip install flask pandas numpy flask-cors scikit-learn'
                 }
             }
         }
 
-        stage('Test') {
+        stage('Stop Docker Container') {
             steps {
-                sh 'python setup.py test'
+                script {
+                    try {
+                        sh 'docker stop $(docker ps -q --filter ancestor=backend-app:latest || true)'
+                    } catch (error) {
+                        echo "Error Stopping Docker Container ${error}"
+                    }
+                }
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'python setup.py install'
+                // Change to the correct directory
+                dir('Implementation/HateSpeech-backend') {
+                    sh 'docker build -t backend-app .'
+                    sh 'docker run -d -p 8000:8000 backend-app'
+                }
             }
         }
     }
