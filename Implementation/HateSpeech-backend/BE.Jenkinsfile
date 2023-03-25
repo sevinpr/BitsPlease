@@ -13,7 +13,7 @@ pipeline {
                 // Change to the correct directory
                 dir('Implementation/HateSpeech-backend') {
                     // Install dependencies
-                    sh 'pip install flask pandas numpy flask-cors scikit-learn'
+                    sh 'pip install flask pandas==1.5.3 numpy flask-cors scikit-learn'
                 }
             }
         }
