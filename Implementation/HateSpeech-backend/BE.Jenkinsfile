@@ -35,7 +35,7 @@ pipeline {
                 // Change to the correct directory
                 dir('Implementation/HateSpeech-backend') {
                     sh 'docker build -t backend-app .'
-                    sh 'docker run -d -p 8000:8000 backend-app'
+                    sh 'docker run -d -p 5000:5000 backend-app'
                 }
             }
         }
