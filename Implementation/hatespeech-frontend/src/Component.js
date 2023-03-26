@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import logo from './logo.svg';
-// import { Button, TextField } from "@material-ui/core";
 
 const api = axios.create({
-  baseURL: "http://back-end-app:5000/", // replace with your base URL
+  baseURL: "http://20.193.132.241:5000/",
 });
 
 const MyComponent = () => {
@@ -49,7 +48,7 @@ const MyComponent = () => {
       </div>
       <h2 className="d-flex justify-content-center"
         id="HeaderText">
-        Let's Prevent Spreading Hate Speechv1
+        Let's Prevent Spreading Hate Speech
       </h2>
       <div className="d-flex justify-content-center">
         <div className="form-floating w-25 input-group rounded">
