@@ -1,7 +1,7 @@
 import pickle
 import pandas as pd
 import numpy as np
-from flask import Flask
+from flask import Flask,request
 from flask_cors import CORS
 from sklearn.feature_extraction.text import TfidfVectorizer
 
