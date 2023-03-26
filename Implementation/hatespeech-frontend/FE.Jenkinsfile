@@ -32,6 +32,18 @@ pipeline {
                 }
             }
         }
+        
+           stage('Remove Docker Container') {
+            steps {
+                script {
+                    try {
+                        sh 'docker rm $(docker ps -aq --filter name=front-end-app || true)'
+                    } catch (error) {
+                        echo "Error Removing Docker Container ${error}"
+                    }
+                }
+            }
+        }
 
         stage('Deploy') {
             steps {
