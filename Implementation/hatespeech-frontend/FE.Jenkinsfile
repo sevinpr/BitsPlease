@@ -38,7 +38,7 @@ pipeline {
                 // Change to the correct directory
                 dir('Implementation/hatespeech-frontend') {
                     sh 'docker build -t front-end-app .'
-                    sh 'docker run -d --network my-network -p 3000:3000 front-end-app'
+                    sh 'docker run -d --name frontend-app --network my-network -p 3000:3000 front-end-app'
                 }
             }
         }
