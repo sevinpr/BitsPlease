@@ -48,7 +48,6 @@ pipeline {
                 dir('Implementation/HateSpeech-backend') {
                    sh 'docker build -t backend-app .'
                    sh 'docker run -d --network my-network --name back-end-app -p 5000:5000 backend-app'
-                   sh 'docker exec back-end-app sh -c "echo $(docker inspect -f \'{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}\' back-end-app) back-end-app >> /etc/hosts"'
                 }
             }
         }
