@@ -30,6 +30,18 @@ pipeline {
             }
         }
 
+        stage('Remove Docker Container') {
+            steps {
+                script {
+                    try {
+                        sh 'docker rm -f $(docker ps -a -q --filter ancestor=backend-app:latest || true)'
+                    } catch (error) {
+                        echo "Error Removing Docker Container ${error}"
+                    }
+                }
+            }
+        }
+
         stage('Deploy') {
             steps {
                 // Change to the correct directory
