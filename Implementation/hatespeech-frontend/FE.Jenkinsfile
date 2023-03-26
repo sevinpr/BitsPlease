@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'docker rm $(docker ps -aq --filter name=front-end-app || true)'
+                        sh 'docker rm -f $(docker ps -aq --filter name=front-end-app || true)'
                     } catch (error) {
                         echo "Error Removing Docker Container ${error}"
                     }
