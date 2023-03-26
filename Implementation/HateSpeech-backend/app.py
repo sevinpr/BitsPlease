@@ -2,12 +2,11 @@ import pickle
 import pandas as pd
 import numpy as np
 from flask import Flask
-from flask import request
-from flask_cors import cross_origin
+from flask_cors import CORS
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/api/input', methods=["POST"])
 @cross_origin()
