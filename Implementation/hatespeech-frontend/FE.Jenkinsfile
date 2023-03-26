@@ -33,11 +33,11 @@ pipeline {
             }
         }
         
-           stage('Remove Docker Container') {
+        stage('Remove Docker Container') {
             steps {
                 script {
                     try {
-                        sh 'docker rm -f $(docker ps -aq --filter name=front-end-app || true)'
+                        sh 'docker rm -f $(docker ps -aqf "name=frontend-app") || true'
                     } catch (error) {
                         echo "Error Removing Docker Container ${error}"
                     }
