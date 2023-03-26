@@ -9,7 +9,6 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/api/input', methods=["POST"])
-@cross_origin()
 def post_input():
     # Load model and data
     with open('my_model.pkl', 'rb') as f:
