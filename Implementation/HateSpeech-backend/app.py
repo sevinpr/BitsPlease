@@ -13,8 +13,8 @@ app = Flask(__name__)
 @cross_origin()
 def post_input():
     # Load model and data
-    f = open('my_model.pkl', 'rb')
-    mod = pickle.load(f)
+    with open('my_model.pkl', 'rb') as f:
+        mod = pickle.load(f)
     path = 'Sinhala_Singlish_Hate_Speech.csv'
     df = pd.read_csv(path)
     df = df.rename(columns={'Phrase': 'text', 'IsHateSpeech': 'label'})
