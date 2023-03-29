@@ -10,7 +10,7 @@ pipeline {
         githubPush()
     }
     
-    credentials {
+    withCredentials {
     // Define the GitHub username:
     string(name: 'github-user', defaultValue: 'sevinpr', description: 'GitHub username')
     // Define the GitHub personal access token:
