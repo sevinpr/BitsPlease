@@ -1,10 +1,10 @@
 pipeline {
     agent any
     
-    environment {
-        GIT_USER = credentials('github-user') // GitHub username
-        GIT_TOKEN = credentials('github-token') // GitHub personal access token
-    }
+   // environment {
+   //     GIT_USER = credentials('github-user') // GitHub username
+   //     GIT_TOKEN = credentials('github-token') // GitHub personal access token
+    //}
 
     triggers {
         githubPush()
