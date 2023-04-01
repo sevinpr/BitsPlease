@@ -1,22 +1,10 @@
 pipeline {
     agent any
     
-   // environment {
-       // GIT_USER = credentials('github-user') // GitHub username
-     //   GIT_TOKEN = credentials('github-token') // GitHub personal access token
-   // }
-
     triggers {
         githubPush()
     }
     
-    //withCredentials {
-    // Define the GitHub username:
-  //  string(name: 'github-user', defaultValue: 'sevinpr', description: 'GitHub username')
-    // Define the GitHub personal access token:
-   // string(name: 'github-token', defaultValue: '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', description: 'GitHub personal access token')
- //   }
-
     stages {
         stage('Checkout') {
             steps {
