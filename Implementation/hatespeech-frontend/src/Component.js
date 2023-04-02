@@ -70,6 +70,13 @@ const MyComponent = () => {
           {responseText}
         </p>
       ) : null}
+
+      <footer>
+        <button className="btn btn-link" onClick={handleAboutUsClick}>
+          About Us
+        </button>
+      </footer>
+
     </div>
   );
 };
