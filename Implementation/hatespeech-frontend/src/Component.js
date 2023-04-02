@@ -70,8 +70,17 @@ const MyComponent = () => {
           {responseText}
         </p>
       ) : null}
-    </div>
+
+      <footer>
+              <button className="btn btn-link" onClick={handleAboutUsClick}>
+               About Us
+              </button>
+      </footer>
+   </div>
   );
 };
+
+
+
 
 export default MyComponent;
