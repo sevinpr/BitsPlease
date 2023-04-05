@@ -15,10 +15,10 @@ def post_input():
     # Load model and data
     with open('my_model.pkl', 'rb') as f:
         mod = pickle.load(f)  # Load trained model
-    path = 'Sinhala_Singlish_Hate_Speech.csv'
+    path = 'Dataset.csv'
     df = pd.read_csv(path)  # Load dataset
     df = df.rename(columns={'Phrase': 'text', 'IsHateSpeech': 'label'})  # Rename columns
-    df = df.groupby('label').head(1000)  # Limit dataset to 1000 samples per class
+    df = df.groupby('label').head(4549)  # Limit dataset to 4549 samples per class
     df['label'] = df['label'].map({'YES': 'Hate Speech', 'NO': 'Non-Hate Speech'})  # Map labels to text
 
     # Get input text from user
