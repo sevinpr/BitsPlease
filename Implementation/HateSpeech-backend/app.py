@@ -17,7 +17,7 @@ def post_input():
         mod = pickle.load(f)  # Load trained model
     path = 'Dataset.csv'
     df = pd.read_csv(path)  # Load dataset
-    df = df.rename(columns={'Phrase': 'text', 'IsHateSpeech': 'label'})  # Rename columns
+    df = df.rename(columns={'comment': 'text', 'IsHateSpeech': 'label'})  # Rename columns
     df = df.groupby('label').head(4549)  # Limit dataset to 4549 samples per class
     df['label'] = df['label'].map({'YES': 'Hate Speech', 'NO': 'Non-Hate Speech'})  # Map labels to text
 
