@@ -1,15 +1,50 @@
+margin: 0;
+overflow: hidden;
+}
+
 #logo {
-  margin: 2%;
-  width: 106px;
-  height: 102px;
-  color: black;
+margin: 2%;
+width: 106px;
+height: 102px;
+}
+
+.main {
+display: flex;
+flex-direction: column;
+height: 100vh;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+flex: 1;
+}
+
+.d-flex {
+position: relative;
+top: -10%;
+}
+
+#HeaderText {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.form-floating {
+display: flex;
+flex-wrap: wrap;
+}
+
+.form-floating button {
+margin-left: 10px;
 }
 
 #marginAdder {
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: rgb(108, 71, 71);
+margin: 2% auto;
+width: 200px;
+background-color: rgb(108, 71, 71);
 }
