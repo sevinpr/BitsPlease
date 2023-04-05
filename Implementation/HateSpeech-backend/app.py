@@ -18,7 +18,7 @@ def post_input():
     path = 'Dataset.csv'
     df = pd.read_csv(path)  # Load dataset
     df = df.rename(columns={'comment': 'text', 'IsHateSpeech': 'label'})  # Rename columns
-    df = df.groupby('label').head(4549)  # Limit dataset to 4549 samples per class
+    df = df.groupby('label').head(1600)  # Limit dataset to 1600 samples per class
     df['label'] = df['label'].map({'YES': 'Hate Speech', 'NO': 'Non-Hate Speech'})  # Map labels to text
 
     # Get input text from user
