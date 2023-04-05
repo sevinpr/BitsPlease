@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import logo from './logo.svg';
+import logo from "./logo.svg";
 
 const api = axios.create({
-  baseURL: "http://20.193.132.241:5000/",
+  baseURL: "http://192.168.8.107:5000/",
 });
 
 const MyComponent = () => {
@@ -43,11 +43,10 @@ const MyComponent = () => {
     <div>
       <div className="d-inline-flex align-items-center">
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
-        <img id="logo" src={logo}  alt={logo}/>
+        <img id="logo" src={logo} alt={logo} />
         <h2>BitsPlease</h2>
       </div>
-      <h2 className="d-flex justify-content-center"
-        id="HeaderText">
+      <h2 className="d-flex justify-content-center" id="HeaderText">
         Let's Prevent Spreading Hate Speech
       </h2>
       <div className="d-flex justify-content-center">
@@ -59,8 +58,12 @@ const MyComponent = () => {
             placeholder="Enter Text...."
             onChange={handleInputChange}
           />
-          <label form="floatingInput" >Type Here...</label>
-          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+          <label form="floatingInput">Type Here...</label>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={handleSubmit}
+          >
             <i className="fa fa-search"></i>
           </button>
         </div>
@@ -71,12 +74,11 @@ const MyComponent = () => {
         </p>
       ) : null}
 
-      <footer>
+      {/* <footer>
         <button className="btn btn-link" onClick={handleAboutUsClick}>
           About Us
         </button>
-      </footer>
-
+      </footer> */}
     </div>
   );
 };
