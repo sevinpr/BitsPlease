@@ -3,7 +3,7 @@ import axios from "axios";
 import logo from "./logo.svg";
 
 const api = axios.create({
-  baseURL: "http://20.193.132.241:5000/",
+  baseURL: "http://localhost:5000/",
 });
 
 const MyComponent = () => {
@@ -74,11 +74,11 @@ const MyComponent = () => {
         </p>
       ) : null}
 
-      {/* <footer>
+      {<footer>
         <button className="btn btn-link" onClick={handleAboutUsClick}>
           About Us
         </button>
-      </footer> */}
+      </footer>}
     </div>
   );
 };
