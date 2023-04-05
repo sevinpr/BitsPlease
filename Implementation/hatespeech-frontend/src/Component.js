@@ -44,7 +44,7 @@ const MyComponent = () => {
       <div className="d-inline-flex align-items-center">
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <img id="logo" src={logo} alt={logo} />
-        <h2>BitsPlease</h2>
+        <h2>HateSweeper</h2>
       </div>
       <h2 className="d-flex justify-content-center" id="HeaderText">
         Let's Prevent Spreading Hate Speech
