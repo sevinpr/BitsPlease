@@ -3,7 +3,7 @@ import axios from "axios";
 import logo from "./logo.svg";
 
 const api = axios.create({
-  baseURL: "http://192.168.8.107:5000/",
+  baseURL: "http://20.193.132.241:5000/",
 });
 
 const MyComponent = () => {
