@@ -3,6 +3,8 @@ import '../App.css';
 import './about.css'
 import { Button } from './Button';
 
+
+
 function SignUpSection() {
   return (
     <div className='About'>
