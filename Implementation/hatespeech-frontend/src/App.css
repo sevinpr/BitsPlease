@@ -26,17 +26,11 @@ nav{
   height: 100vh;
 }
 
-.container {
+.information {
+  margin-top: 40vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  flex: 1;
-}
-
-.d-flex {
-  position: relative;
-  top: -15%;
+  flex-direction: column;
 }
 
 #HeaderText {
