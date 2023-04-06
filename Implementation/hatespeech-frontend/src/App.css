@@ -62,7 +62,8 @@ nav{
 #marginAdder {
   margin: 2% auto;
   width: 200px;
-  background-color: rgb(108, 71, 71);
+  color: #ffffff;
+  background-color: rgb(52, 48, 48);
 }
 
 footer {
