@@ -43,10 +43,15 @@ nav{
 .form-floating {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .form-floating button {
   margin-left: 10px;
+}
+
+.form-control {
+  background-color: rgba(202, 202, 202, 0.396);
 }
 
 .btn {
