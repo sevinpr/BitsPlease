@@ -4,10 +4,9 @@ import logo from "./logo.svg";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import axios from "axios";
-import { FaArrowCircleUp } from "react-icons/fa";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "http://20.193.132.241:5000/",
 });
 
 function Home() {
